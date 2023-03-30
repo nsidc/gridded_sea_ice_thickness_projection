@@ -1,42 +1,19 @@
-# Template instructions (delete me)
-
-- [ ] Replace the following variables in this README:
-    * `{title}`: The title of this application / repository.
-    * `{audience}`: The target audience of this repository.
-    * `{utility}`: Things this repository enables the audience to do.
-    * `{requirements}`: A bulleted list of pre-requisites.
-    * `{installation}`: Describe how to install this software, with platform-specific
-      instructions if necessary.
-    * `{usage}`: Describe how to use this software, with platform-specific instructions
-      if necessary.
-    * `{troubleshooting}`: Describe any tips or tricks in case the user runs into
-      problems.
-
-- [ ] In the "Level of Support" section, choose one LoS and delete the other.
-
-- [ ] Choose a license, rename it to `LICENSE`, and delete the unused one.
-    * The `NASA` license must be used for DAAC projects. The contract number is our
-      5-year DAAC contract and does not need to be changed or maintained in your
-      codebase unless work extends into a new 5-year contract period.
-    * The `GENERAL` license is for all other work.
-
-- [ ] Delete this section.
-
 <p align="center">
   <img alt="NSIDC logo" src="https://nsidc.org/themes/custom/nsidc/logo.svg" width="150" />
 </p>
 
 
-# {title}
+# Gridded Observational Sea Ice Thickness Projection and Grid
 
-{title} enables {audience} to {utility}.
+Gridded Observational Sea Ice Thickness Projection and Grid describes is _the hidden manual_ for how to add projection and grid information the netCDF files in [NSIDC-0690](https://nsidc.org/data/nsidc-0690/versions/1).
+
+Gridded Observational Sea Ice Thickness Products are grids of long-term mean spring ice thickness derived from ERS-1 (1993-2001) and CryoSat (2011 to 2013) radar altimeters, ICESat laser altimeter (2004 to 2009), Operation IceBridge airborne altimeter and snow radar (2009 to 2014), and submarine upward looking sonar (1986-).  These data have been resampled and gridded to a common EASE Grid with 100 km cell size.  All satellite-derived ice thickness fields were regridded as needed from their original gridded format to 100-km EASE grids using a drop-in-the-bucket averaging. IceBridge and submarine thickness estimates within 70 km of a 100 km EASE grid box center were averaged to give a grid cell mean thickness.  Data are written to netCDF files.
+
+Unfortunately, the files have sparse metadata and do not provide projection or grid coordinate information, and they do not conform to the netCDF CF-Convention standard.  The notebook and other information in this repo aims to remedy this situation.
 
 
 ## Level of Support
 
-* This repository is fully supported by NSIDC. If you discover any problems or bugs,
-  please submit an Issue. If you would like to contribute to this repository, you may fork
-  the repository and submit a pull request. 
 * This repository is not actively supported by NSIDC but we welcome issue submissions and
   pull requests in order to foster community contribution.
 
@@ -46,23 +23,29 @@ nsidc@nsidc.org for more information.
 
 ## Requirements
 
-{requirements}
+- `jupyter lab`  
+- `xarray`  
+- `pyproj`
+- `pytest`
 
+Full dependencies are in `environment.yml`
 
 ## Installation
 
-{installation}
-
+`git clone `
 
 ## Usage
 
-{usage}
+```
+$ jupyter lab  # or however you start a jupyter lab instance
+```
+
+Run the notebook
 
 
 ## Troubleshooting
 
-{troubleshooting}
-
+TBD
 
 ## License
 
