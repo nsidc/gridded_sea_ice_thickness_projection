@@ -1,0 +1,21 @@
+name: sea_ice_thickness_projection
+channels:
+ - conda-forge
+ - default
+dependencies:
+ - python ~=3.10
+
+ ###################################################
+ # Imported dependencies and extensions            #
+ ###################################################
+
+ - jupyterlab
+ - matplotlib
+ - cartopy
+ - dask
+ - netCDF4
+ - bottleneck
+ - xarray
+ - rioxarray
+ - pytest
+ 
