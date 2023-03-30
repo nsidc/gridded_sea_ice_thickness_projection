@@ -32,7 +32,8 @@ Full dependencies are in `environment.yml`
 
 ## Installation
 
-`git clone `
+`git clone git@github.com:nsidc/gridded_sea_ice_thickness_projection.git`
+`conda create env -f environment.yml`
 
 ## Usage
 
